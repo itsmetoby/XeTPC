@@ -68,9 +68,13 @@ int main(int argc, char* argv[]) {
   vFE->SetPlane(0,-0.1,0,0,0,0);
   vFE->SetFillMesh(true);
   vFE->SetColor(0,kBlue);
+  vFE->SetColor(83,kMagenta); // shield
+  vFE->SetColor(84,kGreen+3); // shield's pcb
+  vFE->SetColor(85,kGreen+3);
   vFE->SetArea(-2, -2, -0.1, 2, 2, 1);
   
   vf->PlotContour("v");
+  vFE->Plot(true);
   c1->Draw();
   c1->SaveAs("XeTPC_efield.pdf");
 }
