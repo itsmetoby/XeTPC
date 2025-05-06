@@ -46,15 +46,14 @@ int main(int argc, char* argv[]) {
   elm->SetMedium(81,&gas);
   elm->SetWeightingField("/Users/tobychan/garfield/result_file_3/v2a_shield_weight.result", "readout");
 
-  // extx=2,exty=2,extz=1
+  // Adding sensors so it knows where to calculate E field
   Sensor* sensor = new Sensor();
   sensor->AddComponent(elm);
   sensor->SetArea(-2, -2, -1, 2, 2, 1);
 
-
+  
   TCanvas* c1 = new TCanvas("c1","c1",800,800);
-  TCanvas* c2 = new TCanvas("c2","c2",800,800);
-
+  // Viewing E fields
   ViewField * vf = new ViewField();
   vf->SetSensor(sensor);
   vf->SetCanvas(c1);
@@ -62,7 +61,7 @@ int main(int argc, char* argv[]) {
   vf->SetNumberOfContours(20);
   vf->SetNumberOfSamples2d(50,50);
   vf->SetPlane(0,-1,0,0,0,0);
-  
+  // Viewing the TPC
   ViewFEMesh * vFE = new ViewFEMesh();
   vFE->SetCanvas(c1);
   vFE->SetComponent(elm);
