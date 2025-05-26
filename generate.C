@@ -15,13 +15,13 @@ int main(int argc, char* argv[]) {
 
   // Set the field range to be covered by the gas table.
   const size_t nE = 20;
-  const double emin = 100.;
+  const double emin = 0.;
   const double emax = 500.;
   // Flag to request logarithmic spacing.
   constexpr bool useLog = false;
   gas.SetFieldGrid(emin, emax, nE, useLog);
 
-  const int ncoll = 10;
+  const int ncoll = 40;
   // Run Magboltz to generate the gas table.
   gas.GenerateGasTable(ncoll);
   // Save the table.
