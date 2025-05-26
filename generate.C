@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
   const double emin = 100.;
   const double emax = 500.;
   // Flag to request logarithmic spacing.
-  constexpr bool useLog = true;
+  constexpr bool useLog = false;
   gas.SetFieldGrid(emin, emax, nE, useLog);
 
   const int ncoll = 10;
