@@ -14,9 +14,9 @@ int main(int argc, char* argv[]) {
   gas.SetPressure(pressure);
 
   // Set the field range to be covered by the gas table.
-  const size_t nE = 20;
+  const size_t nE = 10;
   const double emin = 0.;
-  const double emax = 500.;
+  const double emax = 300.;
   // Flag to request logarithmic spacing.
   constexpr bool useLog = false;
   gas.SetFieldGrid(emin, emax, nE, useLog);
