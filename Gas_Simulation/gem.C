@@ -14,14 +14,15 @@ int main(int argc, char* argv[]) {
   gas.SetPressure(pressure);
 
   // Set the field range to be covered by the gas table.
-  const size_t nE = 10;
+  const size_t nE = 50;
   const double emin = 0.;
-  const double emax = 300.;
+  const double emax = 250.;
   // Flag to request logarithmic spacing.
   constexpr bool useLog = false;
+  gas.EnableAutoEnergyLimit(false);
   gas.SetFieldGrid(emin, emax, nE, useLog);
 
-  const int ncoll = 40;
+  const int ncoll = 10;
   // Run Magboltz to generate the gas table.
   gas.GenerateGasTable(ncoll);
   // Save the table.
